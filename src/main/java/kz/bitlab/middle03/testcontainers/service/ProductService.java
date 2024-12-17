@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -28,5 +29,10 @@ public class ProductService {
         List<Product> productList = productRepository.findAll();
         LOGGER.info("Found {} products", productList.size());
         return productList;
+    }
+
+    public Optional<Product> getProductById(Long id) {
+        Optional<Product> product = productRepository.findById(id);
+        return product;
     }
 }

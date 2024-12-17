@@ -40,6 +40,15 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
+    }
+
+    public Product(Long id, String name, int price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
